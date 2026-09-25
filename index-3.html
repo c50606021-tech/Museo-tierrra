@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Museo Interactivo de la Tierra</title>
+<meta name="description" content="Museo digital escolar sobre la Geosfera, Hidrosfera, Atmósfera y Biosfera">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+</head>
+<body>
+
+<header id="top">
+  <nav class="navbar">
+    <span class="brand">🌎 Museo de la Tierra</span>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#geosfera">Geosfera</a></li>
+      <li><a href="#hidrosfera">Hidrosfera</a></li>
+      <li><a href="#atmosfera">Atmósfera</a></li>
+      <li><a href="#biosfera">Biosfera</a></li>
+      <li><a href="#interaccion">Interacción</a></li>
+      <li><a href="#curiosidades">Curiosidades</a></li>
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#creditos">Créditos</a></li>
+    </ul>
+  </nav>
+
+  <div class="hero">
+    <div class="stars"></div>
+    <div class="hero-inner">
+      <div class="planet"></div>
+      <h1>🌎 Museo Interactivo de la Tierra</h1>
+      <p>Explora las esferas que forman nuestro planeta: la geosfera sólida, la hidrosfera líquida, la atmósfera gaseosa y la biosfera viva. Toca cada sala para descubrir cómo funcionan y se conectan entre sí.</p>
+      <div class="hero-grid">
+        <a href="#geosfera" class="room-card room-geo"><span>🌍</span>Geosfera</a>
+        <a href="#hidrosfera" class="room-card room-hydro"><span>💧</span>Hidrosfera</a>
+        <a href="#atmosfera" class="room-card room-atmo"><span>☁️</span>Atmósfera</a>
+        <a href="#biosfera" class="room-card room-bio"><span>🌱</span>Biosfera</a>
+        <a href="#interaccion" class="room-card room-int"><span>🔄</span>Interacción</a>
+        <a href="#curiosidades" class="room-card room-curio"><span>🔬</span>Curiosidades</a>
+        <a href="#videos" class="room-card room-video"><span>🎥</span>Videos</a>
+      </div>
+      <div class="qr-panel">
+        <div class="qrbox"><div id="qrcode"></div></div>
+        <p>Escanea para entrar al museo desde tu celular</p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- GEOSFERA -->
+<section id="geosfera" class="room geo-bg">
+  <div class="wrap">
+    <span class="eyebrow">Sala principal</span>
+    <h2>🌍 Geosfera</h2>
+    <p class="lead">La geosfera es la parte sólida del planeta: todas las rocas y minerales que forman su estructura interna y externa, desde la corteza hasta el centro de la Tierra.</p>
+
+    <h3 class="sub">Sus capas</h3>
+    <div class="layer-list">
+      <button class="layer-btn" data-target="dl1">Corteza ＋</button>
+      <div class="layer-detail" id="dl1"><p>Capa externa, delgada y sólida. Su grosor va de ~7 km bajo los océanos a ~70 km bajo las montañas. Formada por rocas ricas en silicio y aluminio.</p></div>
+
+      <button class="layer-btn" data-target="dl2">Manto ＋</button>
+      <div class="layer-detail" id="dl2"><p>La capa más gruesa (~2.900 km). Roca caliente y semiplástica que se mueve muy lentamente, arrastrando la corteza y generando la actividad tectónica.</p></div>
+
+      <button class="layer-btn" data-target="dl3">Núcleo externo ＋</button>
+      <div class="layer-detail" id="dl3"><p>Hierro y níquel en estado líquido a más de 4.000 °C. Su movimiento constante genera el campo magnético que protege a la Tierra.</p></div>
+
+      <button class="layer-btn" data-target="dl4">Núcleo interno ＋</button>
+      <div class="layer-detail" id="dl4"><p>El centro del planeta: hierro y níquel sólidos pese a los ~5.400 °C, porque la presión es tan alta que no permite que se funda.</p></div>
+    </div>
+
+    <h3 class="sub">Placas tectónicas</h3>
+    <p>La litosfera está fragmentada en grandes bloques llamados placas tectónicas, que flotan sobre el manto y se desplazan pocos centímetros por año. Su movimiento provoca terremotos, forma volcanes y da origen a las cordillas montañosas.</p>
+
+    <div class="tabs" id="plateTabs">
+      <div class="tab-buttons">
+        <button class="tab-btn active" data-tab="div">Divergentes</button>
+        <button class="tab-btn" data-tab="conv">Convergentes</button>
+        <button class="tab-btn" data-tab="trans">Transformantes</button>
+      </div>
+      <div class="tab-panel active" id="div"><p>Dos placas se separan y el magma asciende para formar nueva corteza. Ocurre, por ejemplo, en las dorsales oceánicas.</p></div>
+      <div class="tab-panel" id="conv"><p>Dos placas chocan entre sí. Una puede hundirse bajo la otra (subducción), formando volcanes y fosas oceánicas, o pueden plegarse y elevar cordilleras como el Himalaya.</p></div>
+      <div class="tab-panel" id="trans"><p>Dos placas se deslizan lateralmente una junto a otra, generando fricción y liberando energía en forma de terremotos, como en la falla de San Andrés.</p></div>
+    </div>
+
+    <div class="mini-grid">
+      <div class="mini-card"><b>🌋 Volcanes</b><span>Se forman donde el magma logra salir a la superficie, casi siempre cerca de bordes de placas.</span></div>
+      <div class="mini-card"><b>🌐 Terremotos</b><span>Liberación súbita de energía acumulada por la fricción entre placas.</span></div>
+      <div class="mini-card"><b>⛰️ Montañas</b><span>Se elevan por el choque y plegamiento de placas continentales a lo largo de millones de años.</span></div>
+    </div>
+    <p class="importance">🔑 <b>Importancia:</b> la geosfera aporta los minerales, suelos y relieve que sostienen los ecosistemas y todas las actividades humanas.</p>
+  </div>
+</section>
+
+<!-- HIDROSFERA -->
+<section id="hidrosfera" class="room hydro-bg">
+  <div class="wrap">
+    <span class="eyebrow">Sala 2</span>
+    <h2>💧 Hidrosfera</h2>
+    <p class="lead">La hidrosfera reúne toda el agua del planeta, en sus tres estados, cubriendo cerca del <b>71% de la superficie terrestre</b>.</p>
+
+    <div class="chip-grid">
+      <div class="chip">🌊 Océanos</div>
+      <div class="chip">🌊 Mares</div>
+      <div class="chip">🏞️ Ríos</div>
+      <div class="chip">🏞️ Lagos</div>
+      <div class="chip">🕳️ Aguas subterráneas</div>
+      <div class="chip">🧊 Glaciares y hielo</div>
+      <div class="chip">☁️ Agua atmosférica</div>
+    </div>
+
+    <h3 class="sub">Estados del agua</h3>
+    <div class="state-row">
+      <div class="state-card">💧 Líquido<span>Océanos, ríos, lagos</span></div>
+      <div class="state-card">🧊 Sólido<span>Glaciares, nieve, hielo</span></div>
+      <div class="state-card">💨 Gaseoso<span>Vapor de agua en el aire</span></div>
+    </div>
+
+    <h3 class="sub">Ciclo del agua</h3>
+    <div class="cycle-flow">
+      <div class="cycle-step">☀️<span>Evaporación</span></div>
+      <div class="arrow">→</div>
+      <div class="cycle-step">☁️<span>Condensación</span></div>
+      <div class="arrow">→</div>
+      <div class="cycle-step">🌧️<span>Precipitación</span></div>
+      <div class="arrow">→</div>
+      <div class="cycle-step">🏞️<span>Escorrentía</span></div>
+      <div class="arrow">→</div>
+      <div class="cycle-step">🕳️<span>Infiltración</span></div>
+    </div>
+    <p class="importance">🔑 <b>Importancia:</b> el agua es esencial para la vida, regula el clima y sostiene ecosistemas, agricultura e industria.</p>
+  </div>
+</section>
+
+<!-- ATMOSFERA -->
+<section id="atmosfera" class="room atmo-bg">
+  <div class="wrap">
+    <span class="eyebrow">Sala 3</span>
+    <h2>☁️ Atmósfera</h2>
+    <p class="lead">Capa de gases que envuelve la Tierra, retiene el calor, filtra radiación dañina y hace posible el clima y la vida tal como la conocemos.</p>
+
+    <h3 class="sub">Composición del aire</h3>
+    <div class="gasbar">
+      <div style="width:78%;background:#8ECAE6">N₂ 78%</div>
+      <div style="width:21%;background:#219EBC">O₂ 21%</div>
+      <div style="width:1%;background:#023047;color:#E9F5FB">Ar / CO₂ / otros</div>
+    </div>
+
+    <h3 class="sub">Sus capas (de la superficie hacia el espacio)</h3>
+    <div class="timeline">
+      <div class="tl-item"><b>Troposfera</b><span>0–12 km · aquí vivimos y ocurre el clima</span></div>
+      <div class="tl-item"><b>Estratosfera</b><span>12–50 km · contiene la capa de ozono</span></div>
+      <div class="tl-item"><b>Mesosfera</b><span>50–80 km · la zona más fría, desintegra meteoritos</span></div>
+      <div class="tl-item"><b>Termosfera</b><span>80–700 km · aquí ocurren las auroras</span></div>
+      <div class="tl-item"><b>Exosfera</b><span>+700 km · límite difuso con el espacio</span></div>
+    </div>
+
+    <div class="mini-grid">
+      <div class="mini-card"><b>🛡️ Capa de ozono</b><span>Filtra la radiación ultravioleta del Sol y protege a los seres vivos.</span></div>
+      <div class="mini-card"><b>🌡️ Tiempo y clima</b><span>El "tiempo" es el estado diario de la atmósfera; el "clima" es su patrón promedio a largo plazo.</span></div>
+    </div>
+    <p class="importance">🔑 <b>Importancia:</b> sin atmósfera no habría oxígeno para respirar ni protección contra la radiación y los impactos espaciales.</p>
+  </div>
+</section>
+
+<!-- BIOSFERA -->
+<section id="biosfera" class="room bio-bg">
+  <div class="wrap">
+    <span class="eyebrow">Sala 4</span>
+    <h2>🌱 Biosfera</h2>
+    <p class="lead">Es el conjunto de todos los seres vivos del planeta junto con los ambientes donde habitan; existe gracias a la interacción de las otras tres esferas.</p>
+
+    <div class="def-grid">
+      <div class="def-card"><b>Población</b><span>Individuos de una misma especie en un lugar y tiempo dados.</span></div>
+      <div class="def-card"><b>Comunidad</b><span>Conjunto de poblaciones distintas que conviven en un mismo espacio.</span></div>
+      <div class="def-card"><b>Ecosistema</b><span>Comunidad + el ambiente físico con el que interactúa.</span></div>
+    </div>
+
+    <h3 class="sub">Cadena alimentaria</h3>
+    <div class="chain">
+      <div class="chain-step">🌿<span>Productores</span></div>
+      <div class="arrow">→</div>
+      <div class="chain-step">🐛<span>Consumidores</span></div>
+      <div class="arrow">→</div>
+      <div class="chain-step">🍂<span>Descomponedores</span></div>
+    </div>
+    <p class="small-note">Los productores (plantas, algas) crean su propio alimento; los consumidores se alimentan de otros seres vivos; los descomponedores reciclan la materia orgánica devolviendo nutrientes al ambiente.</p>
+
+    <div class="mini-grid">
+      <div class="mini-card"><b>🌈 Biodiversidad</b><span>La enorme variedad de especies, genes y ecosistemas del planeta.</span></div>
+      <div class="mini-card"><b>🏭 Impacto humano</b><span>La deforestación, contaminación y sobreexplotación alteran los ecosistemas y reducen la biodiversidad.</span></div>
+    </div>
+    <p class="importance">🔑 <b>Importancia:</b> la biosfera mantiene el equilibrio ecológico y depende directamente de la salud de la geosfera, hidrosfera y atmósfera.</p>
+  </div>
+</section>
+
+<!-- INTERACCION -->
+<section id="interaccion" class="room int-bg">
+  <div class="wrap">
+    <span class="eyebrow">Sala 5</span>
+    <h2>🔄 Interacción entre las esferas</h2>
+    <p class="lead">Las cuatro esferas de la Tierra no funcionan aisladas: intercambian materia y energía constantemente. Toca cada conexión para ver un ejemplo.</p>
+
+    <div class="link-grid">
+      <button class="link-card" data-t="l1">🌋 Geosfera → Atmósfera</button>
+      <button class="link-card" data-t="l2">🌧️ Atmósfera → Hidrosfera</button>
+      <button class="link-card" data-t="l3">💧 Hidrosfera → Geosfera</button>
+      <button class="link-card" data-t="l4">🌱 Hidrosfera → Biosfera</button>
+      <button class="link-card" data-t="l5">🍃 Biosfera → Atmósfera</button>
+    </div>
+    <div class="link-detail" id="linkDetail">
+      <p id="l1" class="lhidden">Una erupción volcánica libera gases, cenizas y partículas que se incorporan a la atmósfera.</p>
+      <p id="l2" class="lhidden">La precipitación (lluvia, nieve) transporta agua de la atmósfera hacia océanos, ríos y lagos.</p>
+      <p id="l3" class="lhidden">El agua erosiona rocas, transporta sedimentos y modifica el relieve a lo largo del tiempo.</p>
+      <p id="l4" class="lhidden">Los seres vivos dependen del agua para todas sus funciones vitales y su distribución.</p>
+      <p id="l5" class="lhidden">Las plantas intercambian oxígeno y CO₂ con el aire mediante fotosíntesis y respiración.</p>
+      <p class="ldefault" id="ldefault">👆 Elige una conexión para ver el ejemplo.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CURIOSIDADES -->
+<section id="curiosidades" class="room curio-bg">
+  <div class="wrap">
+    <span class="eyebrow">Sala 6</span>
+    <h2>🔬 Curiosidades</h2>
+    <p class="lead">Datos sorprendentes y comprobados sobre nuestro planeta.</p>
+    <div class="curio-grid">
+      <div class="curio-card"><span class="ico">🌐</span>La Tierra no es una esfera perfecta: está ligeramente achatada en los polos y abultada en el ecuador.</div>
+      <div class="curio-card"><span class="ico">🧲</span>El campo magnético terrestre nos protege del viento solar y es generado por el núcleo externo líquido.</div>
+      <div class="curio-card"><span class="ico">🌊</span>Los océanos cubren aproximadamente el 71% de la superficie del planeta.</div>
+      <div class="curio-card"><span class="ico">🌕</span>La Luna influye en las mareas mediante su fuerza de gravedad sobre los océanos.</div>
+      <div class="curio-card"><span class="ico">🧊💧💨</span>El agua es la única sustancia común que existe de forma natural en los tres estados en la Tierra.</div>
+      <div class="curio-card"><span class="ico">🗺️</span>Las placas tectónicas se mueven en promedio a la misma velocidad a la que crecen tus uñas.</div>
+      <div class="curio-card"><span class="ico">🌋</span>Existen volcanes submarinos activos en el fondo del océano, muchos aún sin explorar.</div>
+      <div class="curio-card"><span class="ico">🛰️</span>Los satélites artificiales permiten monitorear el clima, la vegetación y los cambios en la superficie terrestre.</div>
+      <div class="curio-card"><span class="ico">🌡️</span>La atmósfera se extiende varios cientos de kilómetros, pero el 75% de su masa está en los primeros 12 km.</div>
+      <div class="curio-card"><span class="ico">♻️</span>La Tierra funciona como un sistema cerrado de materia: casi nada entra o sale, solo se transforma entre sus esferas.</div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section id="videos" class="room video-bg">
+  <div class="wrap">
+    <span class="eyebrow">Sala 7</span>
+    <h2>🎥 Videos educativos</h2>
+    <p class="lead">Complementa lo aprendido con estos videos de canales educativos.</p>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-frame"><iframe src="https://www.youtube.com/embed/vxYzsSbVKtw" title="Las capas de la Tierra" loading="lazy" allowfullscreen></iframe></div>
+        <p>Las capas de la Tierra: geosfera, hidrosfera y atmósfera</p>
+      </div>
+      <div class="video-card">
+        <div class="video-frame"><iframe src="https://www.youtube.com/embed/7rJNtvqnWcg" title="La Eduteca: las capas de la Tierra" loading="lazy" allowfullscreen></iframe></div>
+        <p>La Eduteca — Las capas de la Tierra</p>
+      </div>
+      <div class="video-card">
+        <div class="video-frame"><iframe src="https://www.youtube.com/embed/8IUnpPkTGwo" title="La Tierra y sus partes" loading="lazy" allowfullscreen></iframe></div>
+        <p>La Tierra y sus partes</p>
+      </div>
+      <a class="video-card link-only" href="https://www.youtube.com/results?search_query=placas+tect%C3%B3nicas+explicaci%C3%B3n+educativa" target="_blank" rel="noopener">
+        <div class="video-frame placeholder">🌋<span>Ver en YouTube</span></div>
+        <p>Placas tectónicas — más videos</p>
+      </a>
+      <a class="video-card link-only" href="https://www.youtube.com/results?search_query=ciclo+del+agua+explicado" target="_blank" rel="noopener">
+        <div class="video-frame placeholder">💧<span>Ver en YouTube</span></div>
+        <p>Ciclo del agua — más videos</p>
+      </a>
+      <a class="video-card link-only" href="https://www.youtube.com/results?search_query=biosfera+ecosistemas+sistema+tierra+educativo" target="_blank" rel="noopener">
+        <div class="video-frame placeholder">🌱<span>Ver en YouTube</span></div>
+        <p>Biosfera y sistema Tierra — más videos</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FUENTES -->
+<section id="fuentes" class="room fuentes-bg">
+  <div class="wrap">
+    <span class="eyebrow">Referencias</span>
+    <h2>📚 Fuentes</h2>
+    <ul class="source-list">
+      <li><a href="https://www.nasa.gov/" target="_blank" rel="noopener">NASA — nasa.gov</a></li>
+      <li><a href="https://www.usgs.gov/" target="_blank" rel="noopener">USGS (U.S. Geological Survey) — usgs.gov</a></li>
+      <li><a href="https://www.noaa.gov/" target="_blank" rel="noopener">NOAA — noaa.gov</a></li>
+      <li><a href="https://www.nationalgeographic.com/" target="_blank" rel="noopener">National Geographic</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- CREDITOS -->
+<section id="creditos" class="room creditos-bg">
+  <div class="wrap credit-wrap">
+    <div class="credit-card">
+      <h3>👥 Integrantes</h3>
+      <ul class="integrantes">
+        <li>Leonardo Esparza</li>
+        <li>Damián Castillo</li>
+        <li>Cristian García</li>
+      </ul>
+      <div class="meta-row">
+        <span>Grupo 3 D</span>
+        <span>CETIS 160</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="#top">↑ Volver al inicio</a>
+  <p>Museo Interactivo de la Tierra — proyecto escolar</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
